@@ -31,16 +31,16 @@
 			
 			<div class="on">
 				<input class="text" type="text" value="Type Something" />
-				<input class="save" type="submit" value="Thanks!" />
+				<input class="save" type="submit" name="commit" value="Thanks!" />
 			</div>
 			
 		</div>
 	</div>
 	
 
-        <script >
-		new FancyEditor('holder');
-	</script>
+<script >new FancyEditor('holder',{off: "div.off", on: "div.on", save: "input.save", text: "input.text"});	</script>
+	
+	
 	
 	
 	
