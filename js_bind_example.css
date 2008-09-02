@@ -1,12 +1,12 @@
 	body {
-		font-family: Georgia, Times, Times New Roman, serif;
+		font-family: Georgia, Times, "Times New Roman", serif;
 		font-size: 14pt;
 	}
 	
 	div#frame {
 		width: 40em;
-		margin: 2em auto;
-		padding-top:2em;
+		margin: 1em auto;
+		padding-top:1em;
 	}
 	
 	div.off {
@@ -22,9 +22,8 @@
 		font-weight: bold;
 	}
 	.menu{
-		float:right;
-		padding-right:8em;
-		height:2em;  
+		text-align: right;
+		height:1em;  
 	}
 	#holder {
 		margin:1em auto;
@@ -43,13 +42,14 @@
 	
 	#holder div.off div.tip {
 		display: none;
+		color: #888;
 		font-size: .5em;
 		line-height: 1em;
 		font-weight: normal;
-		color: #888;
-		width: 40em;
 		text-align: center;
+		
 		position: absolute;
+		width: 40em;
 		left: 50%;
 		margin-left: -20em;
 		margin-top: -2em;

@@ -14,18 +14,18 @@
 		google.load("prototype", "1.6.0.2");	
   		google.load("scriptaculous", "1.8.1");
  	</script> 
-	<link href="/js_bind_example.css" rel="stylesheet" type="text/css" />
+	<link href="js_bind_example.css" rel="stylesheet" type="text/css" />
 
-        <script src="/js_bind_example.js" type="text/javascript"></script>
+        <script src="js_bind_example.js" type="text/javascript"></script>
 </head>
 <body>
-	<div class="menu"><a href="/index_cn.html">中文版/Chinese Version</a></div>
 	<div id="frame"> 
+		<div class="menu"><a href="index_cn.html">中文版/Chinese Version</a></div>
 		<p>This is an example of applying the correct binding in Javascript to solve a real-world problem. The correct use of binding allows us to create a self contained JS object that handles all aspects of our new UI Element, the <code>FancyEditor</code>.</p>
 		<div id="holder" >
 			
 			<div class="off">
-				<span>Click To Edit!</span>
+				<span class="display">Click To Edit!</span>
 				<div class="tip">[ Click this box to edit the text. ]</div>
 			</div>
 			
@@ -38,8 +38,14 @@
 	</div>
 	
 
-<script >new FancyEditor('holder',{off: "div.off", on: "div.on", save: "input.save", text: "input.text"});	</script>
-	
+<script type="text/javascript">
+//<![CDATA[
+	// this creates our object and setup up the triggers
+	// we could easily expand this to something like 
+	// $$('li.editable_item').each(function(elem){new FancyEditor(elem);})
+	new FancyEditor('holder');	
+//]]>
+</script>	
 	
 	
 	

@@ -14,19 +14,20 @@
 		google.load("prototype", "1.6.0.2");	
   		google.load("scriptaculous", "1.8.1");
  	</script> 
-	<link href="/js_bind_example.css" rel="stylesheet" type="text/css" />
-        <script src="/js_bind_example.js" type="text/javascript"></script>
+	
+	<link href="js_bind_example.css" rel="stylesheet" type="text/css" />
+    <script src="js_bind_example.js" type="text/javascript"></script>
 
 </head>
 <body>
-	<div class="menu"><a href="/index.html">English Version/英文版</a></div>
 	<div id="frame"> 
-		<p>这是一个把JS绑定应用到实际问题的例子。<code>梦幻编辑器</code>，它正确的使用JS绑定，并能让我们创建一个可以处理所有新界面元素的问题的独立JS对象。</p>
+		<div class="menu"><a href="index.html">English Version/英文版</a></div>
+		<p>这是一个把JavaScript绑定应用到实际问题的例子。<code>梦幻编辑器</code>，它正确的使用JS绑定，并能让我们创建一个可以处理所有新界面元素的问题的独立JS对象。</p>
  
 		<div id="holder" >
 			
 			<div class="off">
-				<span>点击进去!</span>
+				<span class="display">点击进去!</span>
 				<div class="tip">[ 点击窗口可编辑文字 ]</div>
 			</div>
 			
@@ -39,6 +40,15 @@
 	</div>
 	
 
+
+<script type="text/javascript">
+//<![CDATA[
+	// this creates our object and setup up the triggers
+	// we could easily expand this to something like 
+	// $$('li.editable_item').each(function(elem){new FancyEditor(elem);})
+	new FancyEditor('holder');	
+//]]>
+</script>	
  
 	
 	
