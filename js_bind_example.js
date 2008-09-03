@@ -59,15 +59,17 @@ var FancyEditor = Class.create( {
 			// 这些效果是按顺序完成的，总共花了0.6秒. 在这0.6秒内，我们不能用JS访问被隐藏的元素.
 
 			new Effect.BlindUp(this.off, {duration:0.3});
-			new Effect.BlindDown(this.on, {duration:0.3, queue:'end'});   
-			
+			new Effect.BlindDown(this.on, 
+					{	duration:0.3, 
+						queue:'end',
 			// This is a common problem. We need to access this.text, but this.text is
 			// not visible at runtime. So we use bind to create a function that can be
 			// called at a later date, when all the elements are visible and accessible
 			// to JS.
 			// 这是一个普遍的难题。我们需要访问this.text, 但this.text在运行过度效果的时间里是不可见的，
 			// 所以我们使用绑定来创建一个函数，以便它在接下来所有元素都可见并可访问的时候可以被调用到。
-			setTimeout(this.select_text.bind(this), 610);	
+						afterFinish: this.select_text.bind(this)
+					});   
 			
 		},
 
@@ -78,17 +80,20 @@ var FancyEditor = Class.create( {
 			// update the display in '.off'
 			// 更新'.off'容器的显示内容（即刚输入的文本）
 			this.display.update(this.text.value);
+			var finished = function(){this.editing = false};
 			
 			new Effect.BlindUp(this.on, {duration:0.3});
-			new Effect.BlindDown(this.off, {duration:0.3, queue:'end'}); 
-			
+			new Effect.BlindDown(this.off, 
+					{	duration:0.3, 
+						queue:'end',
 			// Here, we need to set this.editing after the effects are finished. 
 			// This time, we create a functional object and make sure to bind it to our instance.
 			// 当过度效果结束时，设置this.editing的值为'false'以便下一次再调用。 
 			// 我们建立了一个功能对象，并确保绑定到我们的实例。
+						afterFinish: finished.bind(this) 
+					}
+				); 
 			
-			var finished = function(){this.editing = false};
-			setTimeout(finished.bind(this), 610);
 			
 		},
 		
