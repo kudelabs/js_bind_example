@@ -4,7 +4,7 @@
  * license: This source code is purely for demonstration purposes and is not meant for production use
  * 作者: 阿代-德桑迪斯，黄文斌
  * 公司: 酷德软件开发有限公司
- * 许可:	这个源码纯粹是为了示范目的，并不用于商业产品
+ * 许可: 这个源码纯粹是为了示范目的，并不用于商业产品
  */
 var FancyEditor = Class.create( {
 		// FancyEditor is a self-containted Javascript object that could be used as a reusable library.
