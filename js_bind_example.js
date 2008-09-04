@@ -2,7 +2,7 @@
  * author:  Adeh DeSandies, Mysen Huang
  * company: Kude Labs Software Development Limited Company
  * license: This source code is purely for demonstration purposes and is not meant for production use
- * 作者: 阿代-德桑迪斯，黄文斌
+ * 作者: 阿德，黄文斌
  * 公司: 酷德软件开发有限公司
  * 许可: 这个源码纯粹是为了示范目的，并不用于商业产品
  */
